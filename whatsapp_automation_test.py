@@ -4,13 +4,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
-from deepseek import DeepSeek  # Replace with appropriate AI API
+from deepseek import DeepSeek
 
 # Configure DeepSeek AI (Replace with actual API key)
-deepseek = DeepSeek(api_key="sk-847377f5ee3b4b769666698abc380e09")
+deepseek = DeepSeek(api_key="deepseek_api_key") 
 
 # Configure Selenium WebDriver
-chrome_driver_path = r"C:\Users\raake\Documents\chrome_driver"  # Update with your actual path
+chrome_driver_path = r"C:\Users\raake\Documents\chrome_driver"
 service = Service(chrome_driver_path)
 driver = webdriver.C
 hrome(service=service)
