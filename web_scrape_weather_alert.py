@@ -104,9 +104,9 @@ def get_immigration_news(source: ImmigrationSource = ImmigrationSource.GENERAL) 
 
 
 def _fetch_linkedin_jobs(role: str, location: str, count: int = 5) -> list[str]:
-    """Fetch job listings from LinkedIn guest API for a given role and location."""
+    """Fetch job listings from LinkedIn guest API for a given role and location (past 24 hours)."""
     url = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
-    params = {"keywords": role, "location": location, "start": 0}
+    params = {"keywords": role, "location": location, "start": 0, "f_TPR": "r86400"}
     response = requests.get(url, headers=HEADERS, params=params, timeout=10)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
@@ -117,6 +117,7 @@ def _fetch_linkedin_jobs(role: str, location: str, count: int = 5) -> list[str]:
         title = li.find("h3")
         company = li.find("h4")
         link_tag = li.find("a", class_="base-card__full-link")
+        date_tag = li.find("time")
         if not title or not company:
             continue
         title_text = title.get_text(strip=True)
@@ -125,9 +126,9 @@ def _fetch_linkedin_jobs(role: str, location: str, count: int = 5) -> list[str]:
         if key in seen:
             continue
         seen.add(key)
-        # Strip tracking params — keep only the clean job URL
         href = link_tag["href"].split("?")[0] if link_tag else ""
-        jobs.append(f"{title_text} @ {company_text}\n  {href}")
+        posted = date_tag.get_text(strip=True) if date_tag else ""
+        jobs.append(f"{title_text} @ {company_text} ({posted})\n  {href}")
         if len(jobs) >= count:
             break
 

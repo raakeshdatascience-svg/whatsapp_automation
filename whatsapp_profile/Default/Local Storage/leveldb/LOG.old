@@ -1,3 +1,13 @@
-2026/03/11-17:27:29.059 c0fc Reusing MANIFEST D:\Personal\Apps\WhatsApp Automation\whatsapp_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/03/11-17:27:29.065 c0fc Recovering log #3
-2026/03/11-17:27:29.072 c0fc Reusing old log D:\Personal\Apps\WhatsApp Automation\whatsapp_profile\Default\Local Storage\leveldb/000003.log 
+2026/04/02-17:21:15.714 ad94 Reusing MANIFEST D:\Personal\Apps\WhatsApp Automation\whatsapp_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/04/02-17:21:15.718 ad94 Recovering log #3
+2026/04/02-17:21:15.719 ad94 Level-0 table #3: started
+2026/04/02-17:21:15.724 ad94 Level-0 table #3: 120 bytes OK
+2026/04/02-17:21:15.724 ad94 Recovering log #13
+2026/04/02-17:21:15.725 ad94 Level-0 table #4: started
+2026/04/02-17:21:15.730 ad94 Level-0 table #4: 23273 bytes OK
+2026/04/02-17:21:15.730 ad94 Recovering log #16
+2026/04/02-17:21:15.733 ad94 Reusing old log D:\Personal\Apps\WhatsApp Automation\whatsapp_profile\Default\Local Storage\leveldb/000016.log 
+2026/04/02-17:21:15.737 ad94 Delete type=0 #3
+2026/04/02-17:21:15.738 ad94 Delete type=0 #13
+2026/04/02-17:21:15.738 ad94 Delete type=2 #14
+2026/04/02-17:21:15.738 ad94 Delete type=2 #17
