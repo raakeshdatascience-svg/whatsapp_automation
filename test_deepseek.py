@@ -1,7 +1,7 @@
 import openai
 
 # Initialize the OpenAI client with DeepSeek's API key and base URL
-client = openai.OpenAI(api_key="sk-847377f5ee3b4b769666698abc380e09", base_url="https://api.deepseek.com")
+client = openai.OpenAI(api_key="deep_seek_key", base_url="https://api.deepseek.com")
 
 def chat_with_deepseek(user_input):
     response = client.chat.completions.create(
